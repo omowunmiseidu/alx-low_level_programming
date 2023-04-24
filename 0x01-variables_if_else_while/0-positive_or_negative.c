@@ -1,18 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
 
-int main() {
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-    double num;
-    printf("Enter a number: ");
-    scanf("%lf", &num);
-    if (num <= 0.0) {
-        if (num == 0.0)
-            printf("You entered 0.");
-        else
-            printf("You entered a negative number.");
-    } 
-    else
-        printf("You entered a positive number.");
+	if (n > 0)
+		printf("%d is positive\n", n);
+	else if (n == 0)
+		printf("%d is zero\n", n);
+	else
+		printf("%d is negative\n", n);
 
-    return 0;
+	return (0);
 }
